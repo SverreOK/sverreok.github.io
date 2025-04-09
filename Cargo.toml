@@ -1,0 +1,9 @@
+[package]
+name = "personal-website"
+version = "0.1.0"
+edition = "2021"
+description = "Personal website"
+
+[dependencies]
+yew = { version="0.21", features=["csr"] }
+yew-router = "0.18"
