@@ -7,3 +7,4 @@ description = "Personal website"
 [dependencies]
 yew = { version="0.21", features=["csr"] }
 yew-router = "0.18"
+gloo = "0.7.0"
