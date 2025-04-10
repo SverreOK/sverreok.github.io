@@ -1,11 +1,16 @@
 use yew::prelude::*;
 
+use crate::pages::components::Footer;
+use crate::pages::components::Navbar;
+
 #[function_component(Home)]
 pub fn home() -> Html {
     html! {
-        <div class="home">
-            <h1>{ "Welcome to the Home Page!" }</h1>
-            <p>{ "This is the home page of our Yew application." }</p>
-        </div>
+        <>
+            <Navbar />
+            <div class="splash-container">
+            </div>
+            <Footer />
+        </>
     }
 }

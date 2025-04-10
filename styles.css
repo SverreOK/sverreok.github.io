@@ -1,0 +1,56 @@
+/* Import PureCSS */
+@import url("https://cdn.jsdelivr.net/npm/purecss@3.0.0/build/base-min.css");
+@import url("https://cdn.jsdelivr.net/npm/purecss@3.0.0/build/pure-min.css");
+
+@import "https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css";
+
+/* EAE8FF, D8D5DB, ADACB5, 2D3142, B0D7FF */
+
+/* Navbar Styling */
+.home-menu {
+    padding: 0.2em;
+    font-size: 1.2em;
+    text-align: center;
+    box-shadow: 0 1px 1px rgba(0,0,0, 0.10);
+}
+.home-menu {
+    background: #d8d5db;
+}
+
+.home-menu .pure-menu-heading {
+    color: #2d3142;
+    font-weight: 400;
+    font-size: 120%;
+    text-align: left;
+}
+
+.home-menu a {
+    color: #2d3142;
+}
+.home-menu li a:hover,
+.home-menu li a:focus {
+    background: #b0d7ff;
+    border: none;
+    color: #eae8ff;
+    border-radius: 8px;
+    transition: border-radius 0.3s ease, background 0.3s ease;
+}
+
+/* Footer Styling */
+.footer {
+    background: #d8d5db;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    text-align: center;
+}
+
+.footer i {
+    margin-right: 1em;
+    font-size: 2em;
+    color: #2d3142;
+}
+.footer a:hover i {
+    color: #b0d7ff;
+}
+
