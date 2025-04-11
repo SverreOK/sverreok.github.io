@@ -1,62 +1,77 @@
-/* Import PureCSS */
+/*---------------------------------
+  Imports
+----------------------------------*/
 @import url("https://cdn.jsdelivr.net/npm/purecss@3.0.0/build/base-min.css");
 @import url("https://cdn.jsdelivr.net/npm/purecss@3.0.0/build/pure-min.css");
+@import url("https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css");
+@import url("https://fonts.googleapis.com/css2?family=Quicksand:wght@300..700&display=swap");
 
-@import "https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css";
-
-/* EAE8FF, D8D5DB, ADACB5, 2D3142, B0D7FF */
-
-/* Global Styles */
-body.light-mode {
-    background-color: #EAE8FF; /* Light background */
-    color: #2D3142; /* Dark text */
+/*---------------------------------
+  Theme Variables
+----------------------------------*/
+:root {
+  --bg-color: #D8D5DB;
+  --text-color: #2D3142;
+  --nav-bg: #D8D5DB;
+  --nav-text: #2D3142;
+  --nav-hover-bg: #B0D7FF;
+  --nav-hover-text: #EAE8FF;
+  --footer-bg: #D8D5DB;
+  --footer-icon: #2D3142;
+  --footer-icon-hover: #B0D7FF;
+  --skill-bg: #2D3142;
+  --skill-text: #EAE8FF;
+  --link-hover: #B0D7FF;
 }
 
-body.dark-mode {
-    background-color: #2D3142; /* Dark background */
-    color: #EAE8FF; /* Light text */
+[data-theme="dark"] {
+  --bg-color: #2D3142;
+  --text-color: #D8D5DB;
+  --nav-bg: #ADACB5;
+  --nav-text: #EAE8FF;
+  --footer-bg: #ADACB5;
+  --footer-icon: #EAE8FF;
 }
 
-/* Navbar Styling */
+/*---------------------------------
+  Base Styles
+----------------------------------*/
+body {
+  background-color: var(--bg-color);
+  color: var(--text-color);
+  font-family: 'Quicksand', sans-serif;
+  font-size: 13px;
+  font-style: normal;
+  font-weight: 400;
+  font-optical-sizing: auto;
+  line-height: 1.7em;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+.pure-img-responsive {
+  max-width: 100%;
+  height: auto;
+}
+
+/*---------------------------------
+  Navbar
+----------------------------------*/
 .home-menu {
-    padding: 0.2em;
-    font-size: 1.2em;
-    text-align: center;
-    box-shadow: 0 1px 1px rgba(0, 0, 0, 0.10);
-}
-.home-menu {
-    background: #D8D5DB; /* Light mode navbar background */
-}
-
-body.dark-mode .home-menu {
-    background: #ADACB5; /* Dark mode navbar background */
+  background: var(--nav-bg);
+  color: var(--nav-text);
+  font-size: 1.2em;
+  text-align: center;
+  padding: 0.5em 0;
+  box-shadow: 0 1px 1px rgba(0, 0, 0, 0.1);
+  position: relative;
 }
 
-.home-menu .pure-menu-heading {
-    color: #2D3142; /* Light mode heading text */
-}
-
-body.dark-mode .home-menu .pure-menu-heading {
-    color: #EAE8FF; /* Dark mode heading text */
-}
-
+.home-menu .pure-menu-heading,
 .home-menu a {
-    color: #2D3142; /* Light mode link color */
-}
-
-body.dark-mode .home-menu a {
-    color: #EAE8FF; /* Dark mode link color */
-}
-
-.home-menu li a:hover {
-    background: #B0D7FF; /* Hover background */
-    border: none;
-    color: #EAE8FF; /* Hover text color */
-    border-radius: 6px;
-    transition: border-radius 0.3s ease, background 0.3s ease;
-}
-
-.theme-toggle {
     background: none;
     border: none;
     cursor: pointer;
@@ -64,35 +79,136 @@ body.dark-mode .home-menu a {
     color: inherit;
     transition: transform 0.3s ease;
 }
-
-.theme-toggle:hover {
+.home-menu .pure-menu-heading:hover {
     transform: scale(1.2);
 }
 
-/* Footer Styling */
+.home-menu .pure-menu-link {
+  color: var(--nav-text);
+  background: none;
+  padding: 0.5em 1em;
+  display: inline-block;
+  transition: transform 0.3s ease;
+}
+.home-menu .pure-menu-link:hover {
+  transform: scale(1.2);
+}
+
+/*---------------------------------
+  Theme Toggle Button
+----------------------------------*/
+.theme-toggle {
+  background: none;
+  border: none;
+  cursor: pointer;
+  font-size: 1.3em;
+  color: inherit;
+  transition: transform 0.3s ease;
+}
+
+.theme-toggle:hover {
+  transform: scale(1.2);
+}
+
+/*---------------------------------
+  Footer
+----------------------------------*/
 .footer {
-    background: #D8D5DB; /* Light mode footer background */
+    background: var(--footer-bg);
+    text-align: center;
     position: fixed;
     bottom: 0;
     width: 100%;
-    text-align: center;
-}
-
-body.dark-mode .footer {
-    background: #ADACB5; /* Dark mode footer background */
+    margin-top: 2em;
 }
 
 .footer i {
-    margin-right: 1em;
     font-size: 2em;
-    color: #2D3142; /* Light mode icon color */
-}
-
-body.dark-mode .footer i {
-    color: #EAE8FF; /* Dark mode icon color */
+    margin-right: 1em;
+    transition: transform 0.3s ease;
 }
 
 .footer a:hover i {
-    color: #B0D7FF; /* Hover icon color */
+    transform: scale(1.2);
 }
 
+/*---------------------------------
+  Content
+----------------------------------*/
+.content-wrapper {
+  width: 100%;
+  z-index: 2;
+  text-align: center;
+}
+
+.content {
+  padding: 1em;
+  font-size: 1.2em;
+  max-width: 900px;
+  margin: auto auto;
+}
+
+.content-head {
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  margin: 0 0 1em;
+}
+
+.content-subhead {
+  font-weight: 500;
+  font-size: 1.2em;
+  margin: 0.5em 0;
+}
+
+/*---------------------------------
+  Skills Section
+----------------------------------*/
+.skills-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 1.5em;
+  margin-top: 2em;
+}
+
+.skills-title {
+  font-size: 2em;
+  font-weight: 500;
+  text-align: center;
+  margin-bottom: 1em;
+}
+
+.skills-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+  gap: 1.5em;
+  width: 100%;
+  max-width: 800px;
+}
+
+.skill-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 1em;
+  background-color: var(--skill-bg);
+  border-radius: 8px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  text-align: center;
+}
+
+.skill-icon {
+  width: 48px;
+  height: 48px;
+  margin-bottom: 0.5em;
+  object-fit: contain;
+}
+
+.skill-name {
+  font-size: 1em;
+  font-weight: 600;
+  color: var(--skill-text);
+}

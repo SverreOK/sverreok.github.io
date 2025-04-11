@@ -10,11 +10,8 @@ pub fn navbar() -> Html {
             let new_mode = !*is_dark_mode;
             is_dark_mode.set(new_mode);
 
-            if new_mode {
-                gloo::utils::document().body().unwrap().set_class_name("dark-mode");
-            } else {
-                gloo::utils::document().body().unwrap().set_class_name("light-mode");
-            }
+            let document_element = gloo::utils::document().document_element().unwrap();
+            document_element.set_attribute("data-theme", if new_mode { "dark" } else { "light" }).unwrap();
         })
     };
 
@@ -22,7 +19,7 @@ pub fn navbar() -> Html {
         <div class="header">
             <div class="home-menu pure-menu pure-menu-horizontal pure-menu-fixed">
                 <a class="pure-menu-heading" href="">
-                    <i class="fas fa-home"></i> // Font Awesome home icon
+                    <i class="fas fa-home"></i>
                 </a>
 
                 <ul class="pure-menu-list">
@@ -36,6 +33,61 @@ pub fn navbar() -> Html {
                 </ul>
             </div>
         </div>
+    }
+}
+
+#[derive(Properties, PartialEq)]
+pub struct Skill {
+    pub name: &'static str,
+    pub icon: &'static str,
+}
+
+#[function_component(Skills)]
+pub fn skills() -> Html {
+    let skills = vec![
+        Skill { name: "C/C++", icon: "static/icons/c_cpp.svg" },
+        Skill { name: "CMake", icon: "static/icons/cmake.svg" },
+        Skill { name: "Docker", icon: "static/icons/docker.svg" },
+        Skill { name: "ARM Assembly", icon: "static/icons/arm_assembly.svg" },
+        Skill { name: "Python", icon: "static/icons/python.svg" },
+        Skill { name: "Matlab", icon: "static/icons/matlab.svg" },
+        Skill { name: "Simulink", icon: "static/icons/simulink.svg" },
+        Skill { name: "Altium", icon: "static/icons/altium.svg" },
+        Skill { name: "LTSpice", icon: "static/icons/ltspice.svg" },
+        Skill { name: "STM32", icon: "static/icons/stm32.svg" },
+    ];
+
+    let curr_learning = vec![
+        Skill { name: "Rust", icon: "static/icons/rust.svg" },
+        Skill { name: "Google Test", icon: "static/icons/google-test.png" },
+        Skill { name: "OpenFOAM", icon: "static/icons/google-test.png" },
+    ];
+
+    html! {
+        <>
+        <div class="skills-container">
+            <h2 class="skills-title">{"Experienced with"}</h2>
+            <div class="skills-grid">
+                { for skills.iter().map(|skill| html! {
+                    <div class="skill-item">
+                        <img src={skill.icon} alt={format!("{} icon", skill.name)} class="skill-icon" />
+                        <span class="skill-name">{ skill.name }</span>
+                    </div>
+                })}
+            </div>
+        </div>
+        <div class="skills-container">
+            <h2 class="skills-title">{"Currently learning"}</h2>
+            <div class="skills-grid">
+                { for curr_learning.iter().map(|skill| html! {
+                    <div class="skill-item">
+                        <img src={skill.icon} alt={format!("{} icon", skill.name)} class="skill-icon" />
+                        <span class="skill-name">{ skill.name }</span>
+                    </div>
+                })}
+            </div>
+        </div>
+        </>
     }
 }
 
