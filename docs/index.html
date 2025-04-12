@@ -1,0 +1,25 @@
+<!doctype html>
+<html>
+    <head>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="/personal_website/styles-ead8368cd31389f0.css" integrity="sha384-xgOx/kopGXQ1LBJIfG2L7tWE7qwLTPxqOpVC003BrjgWw+siYIoAwstk4waTChpe"/>
+        
+        <link rel="icon" href="/personal_website/circuit-icon-2ca8f89ef158817d.png" integrity="sha384-jXvae7Vyb7xFI/RIFZ0sssnhGH4OFWi4lsw3wGTsS0asvs9/wWdorFoV0YNqdUvr"/>
+        <title>SverreWeb</title>
+        <base href="/personal_website/" />
+    <link rel="modulepreload" href="/personal_website/personal-website-6dbcf0401bb4b4b8.js" crossorigin="anonymous" integrity="sha384-5DKnaIda8gTb54j4GE9VlW/O3FJLmvBGVrYQvKgXCal02fZ0t2Ci3bzMYHb8fKqr"><link rel="preload" href="/personal_website/personal-website-6dbcf0401bb4b4b8_bg.wasm" crossorigin="anonymous" integrity="sha384-C3ZBLnQHS/q0Qq0CRosmS9tx5WFGQkS1OVnT5t5jyZrYDkXl8VmEHbO50rBnxPtI" as="fetch" type="application/wasm"></head>
+    <body>
+    
+<script type="module">
+import init, * as bindings from '/personal_website/personal-website-6dbcf0401bb4b4b8.js';
+const wasm = await init({ module_or_path: '/personal_website/personal-website-6dbcf0401bb4b4b8_bg.wasm' });
+
+
+window.wasmBindings = bindings;
+
+
+dispatchEvent(new CustomEvent("TrunkApplicationStarted", {detail: {wasm}}));
+
+</script></body>
+</html>

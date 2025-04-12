@@ -1,3 +1,7 @@
 [serve]
 address = "127.0.0.1"
 port = 8001
+
+[build]
+dist = "docs"
+public_url = "/personal_website"
