@@ -18,7 +18,7 @@ pub fn navbar() -> Html {
     html! {
         <div class="header">
             <div class="home-menu pure-menu pure-menu-horizontal pure-menu-fixed">
-                <a class="pure-menu-heading" href="">
+                <a class="pure-menu-heading" href="/">
                     <i class="fas fa-home"></i>
                 </a>
 

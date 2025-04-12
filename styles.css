@@ -10,27 +10,33 @@
   Theme Variables
 ----------------------------------*/
 :root {
-  --bg-color: #D8D5DB;
-  --text-color: #2D3142;
-  --nav-bg: #D8D5DB;
-  --nav-text: #2D3142;
-  --nav-hover-bg: #B0D7FF;
-  --nav-hover-text: #EAE8FF;
-  --footer-bg: #D8D5DB;
-  --footer-icon: #2D3142;
-  --footer-icon-hover: #B0D7FF;
-  --skill-bg: #2D3142;
-  --skill-text: #EAE8FF;
-  --link-hover: #B0D7FF;
+  --bg-color: #E6EFF6;
+  --text-color: #0D1B2A;
+  --nav-bg: #3D5A80;
+  --nav-text: #E0FBFC;
+  --nav-hover-bg: #293241;
+  --nav-hover-text: #98C1D9;
+  --footer-bg: #3D5A80;
+  --footer-icon: #E0FBFC;
+  --footer-icon-hover: #98C1D9;
+  --skill-bg: #C9D6DF;
+  --skill-text: #0D1B2A;
+  --link-hover: #A8DADC;
 }
 
 [data-theme="dark"] {
-  --bg-color: #2D3142;
-  --text-color: #D8D5DB;
-  --nav-bg: #ADACB5;
-  --nav-text: #EAE8FF;
-  --footer-bg: #ADACB5;
-  --footer-icon: #EAE8FF;
+  --bg-color: #0D1B2A;
+  --text-color: #E0FBFC;
+  --nav-bg: #1B263B;
+  --nav-text: #E0FBFC;
+  --nav-hover-bg: #293241;
+  --nav-hover-text: #98C1D9;
+  --footer-bg: #1B263B;
+  --footer-icon: #98C1D9;
+  --footer-icon-hover: #A8DADC;
+  --skill-bg: #415A77;
+  --skill-text: #E0FBFC;
+  --link-hover: #A8DADC;
 }
 
 /*---------------------------------
@@ -138,6 +144,7 @@ a {
   width: 100%;
   z-index: 2;
   text-align: center;
+  margin-bottom: 5em;
 }
 
 .content {
@@ -210,4 +217,65 @@ a {
   font-size: 1em;
   font-weight: 600;
   color: var(--skill-text);
+}
+
+/*---------------------------------
+  404 Page Styling
+----------------------------------*/
+.splash-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  background: linear-gradient(135deg, #2D3142, #4F5D75);
+  color: #EAE8FF;
+  text-align: center;
+  overflow: hidden;
+}
+
+.error-container {
+  animation: float 3s ease-in-out infinite;
+}
+
+.error-code {
+  font-size: 8rem;
+  font-weight: 700;
+  color: #B0D7FF;
+  text-shadow: 0 0 20px rgba(176, 215, 255, 0.8), 0 0 40px rgba(176, 215, 255, 0.6);
+  margin: 0;
+}
+
+.error-message {
+  font-size: 1.5rem;
+  margin: 1em 0;
+  color: #EAE8FF;
+}
+
+.back-home {
+  display: inline-block;
+  margin-top: 1.5em;
+  padding: 0.8em 1.5em;
+  font-size: 1.2rem;
+  font-weight: 600;
+  color: #2D3142;
+  background-color: #B0D7FF;
+  border-radius: 5px;
+  text-decoration: none;
+  transition: transform 0.3s ease, background-color 0.3s ease;
+}
+
+.back-home:hover {
+  transform: scale(1.1);
+  background-color: #EAE8FF;
+}
+
+/* Floating animation for the error container */
+@keyframes float {
+  0%, 100% {
+      transform: translateY(0);
+  }
+  50% {
+      transform: translateY(-10px);
+  }
 }

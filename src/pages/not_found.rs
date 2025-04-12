@@ -9,7 +9,11 @@ pub fn not_found() -> Html {
         <>
             <Navbar />
             <div class="splash-container">
-            <h1>{"404"}</h1>
+                <div class="error-container">
+                    <h1 class="error-code">{"404"}</h1>
+                    <p class="error-message">{"Oops! The page you're looking for doesn't exist."}</p>
+                    <a href="/" class="back-home">{"Go Back Home"}</a>
+                </div>
             </div>
             <Footer />
         </>

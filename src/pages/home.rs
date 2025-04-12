@@ -24,8 +24,8 @@ pub fn home() -> Html {
                         as a place to collect a writeup of my projects."}</p>
                     </div>
                 </div>
+                <Skills />
             </div>
-            <Skills />
             <Footer />
         </>
     }
