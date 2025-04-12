@@ -45,22 +45,22 @@ pub struct Skill {
 #[function_component(Skills)]
 pub fn skills() -> Html {
     let skills = vec![
-        Skill { name: "C/C++", icon: "static/icons/c_cpp.svg" },
-        Skill { name: "CMake", icon: "static/icons/cmake.svg" },
+        Skill { name: "C/C++", icon: "static/icons/cpp_logo.svg" },
+        Skill { name: "CMake", icon: "static/icons/Cmake.svg" },
         Skill { name: "Docker", icon: "static/icons/docker.svg" },
-        Skill { name: "ARM Assembly", icon: "static/icons/arm_assembly.svg" },
+        Skill { name: "ARM Assembly", icon: "static/icons/asm.svg" },
         Skill { name: "Python", icon: "static/icons/python.svg" },
         Skill { name: "Matlab", icon: "static/icons/matlab.svg" },
-        Skill { name: "Simulink", icon: "static/icons/simulink.svg" },
-        Skill { name: "Altium", icon: "static/icons/altium.svg" },
-        Skill { name: "LTSpice", icon: "static/icons/ltspice.svg" },
-        Skill { name: "STM32", icon: "static/icons/stm32.svg" },
+        Skill { name: "Simulink", icon: "static/icons/simulink.png" },
+        Skill { name: "Altium", icon: "static/icons/altium.png" },
+        Skill { name: "LTSpice", icon: "static/icons/ltspice.png" },
+        Skill { name: "STM32", icon: "static/icons/stm32.png" },
     ];
 
     let curr_learning = vec![
         Skill { name: "Rust", icon: "static/icons/rust.svg" },
-        Skill { name: "Google Test", icon: "static/icons/google-test.png" },
-        Skill { name: "OpenFOAM", icon: "static/icons/google-test.png" },
+        Skill { name: "Google Test", icon: "static/icons/googletest.png" },
+        Skill { name: "OpenFOAM", icon: "static/icons/openfoam.png" },
     ];
 
     html! {
