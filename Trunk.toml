@@ -4,4 +4,4 @@ port = 8001
 
 [build]
 dist = "docs"
-public_url = "/personal_website"
+public_url = "/"
