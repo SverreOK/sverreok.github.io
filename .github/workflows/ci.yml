@@ -20,14 +20,18 @@ jobs:
           toolchain: stable
           override: true
 
-      # 3. Install trunk
+      # 3. Install dependencies
+      - name: Rustup wasm32-unknown-unknown
+        run: rustup target add wasm32-unknown-unknown
+
+      # 4. Install trunk
       - name: Install trunk
         run: cargo install trunk
-
-      # 4. Build the Wasm app (detect build errors)
+      
+      # 5. Build the Wasm app (detect build errors)
       - name: trunk build
         run: trunk build --release
 
-      # 5. Run unit & integration tests
+      # 6. Run unit & integration tests
       - name: Run cargo tests
         run: cargo test --all -- --nocapture
