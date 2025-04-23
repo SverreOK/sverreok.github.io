@@ -102,7 +102,7 @@ pub fn footer() -> Html {
                 <a href="https://github.com/SverreOK" target="_blank">
                     <i class="fab fa-github"></i>
                 </a>
-                <a href="/404">
+                <a href="/#/invalid">
                     <i class="fas fa-envelope"></i>
                 </a>
             </p>

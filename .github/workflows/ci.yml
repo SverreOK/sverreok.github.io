@@ -1,0 +1,33 @@
+name: CI on dev
+
+on:
+  push:
+    branches: [ dev ]
+  workflow_dispatch:
+
+jobs:
+  build-and-test:
+    if: contains(github.event.head_commit.message, '[ci]')
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repo
+        uses: actions/checkout@v3
+
+      - name: Install Rust toolchain
+        uses: actions-rs/toolchain@v1
+        with:
+          toolchain: stable
+          override: true
+
+      - name: Add wasm32 target
+        run: rustup target add wasm32-unknown-unknown
+
+      - name: Install trunk
+        run: cargo install trunk
+
+      - name: Build the Wasm app
+        run: trunk build
+
+      - name: Run tests
+        run: cargo test --all -- --nocapture
