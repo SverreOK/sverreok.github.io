@@ -29,7 +29,7 @@ pub fn navbar() -> Html {
                         </button>
                     </li>
                     <li class="pure-menu-item"><a href="#" class="pure-menu-link">{"About"}</a></li>
-                    <li class="pure-menu-item"><a href="#" class="pure-menu-link">{"Projects"}</a></li>
+                    <li class="pure-menu-item"><a href="#/projects" class="pure-menu-link">{"Projects"}</a></li>
                 </ul>
             </div>
         </div>
