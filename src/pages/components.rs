@@ -28,7 +28,7 @@ pub fn navbar() -> Html {
                             <i class={ if *is_dark_mode { "fas fa-sun" } else { "fas fa-moon" } }></i>
                         </button>
                     </li>
-                    <li class="pure-menu-item"><a href="#" class="pure-menu-link">{"About"}</a></li>
+                    <li class="pure-menu-item"><a href="/" class="pure-menu-link">{"About"}</a></li>
                     <li class="pure-menu-item"><a href="#/projects" class="pure-menu-link">{"Projects"}</a></li>
                 </ul>
             </div>
