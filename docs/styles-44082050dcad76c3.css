@@ -19,8 +19,8 @@
   --footer-bg: #3D5A80;
   --footer-icon: #E0FBFC;
   --footer-icon-hover: #98C1D9;
-  --skill-bg: #C9D6DF;
-  --skill-text: #0D1B2A;
+  --box-bg: #C9D6DF;
+  --box-text: #0D1B2A;
   --link-hover: #A8DADC;
 }
 
@@ -34,8 +34,8 @@
   --footer-bg: #1B263B;
   --footer-icon: #98C1D9;
   --footer-icon-hover: #A8DADC;
-  --skill-bg: #415A77;
-  --skill-text: #E0FBFC;
+  --box-bg: #415A77;
+  --box-text: #E0FBFC;
   --link-hover: #A8DADC;
 }
 
@@ -141,9 +141,9 @@ body {
 }
 
 /*---------------------------------
-  Skills Section
+  Box Section
 ----------------------------------*/
-.skills-container {
+.box-container {
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -152,13 +152,13 @@ body {
   padding: 1.5em 1.5em;
 }
 
-.skills-title {
+.box-title {
   font-size: 2em;
   font-weight: 500;
   text-align: center;
 }
 
-.skills-grid {
+.box-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
   gap: 1.5em;
@@ -166,29 +166,66 @@ body {
   max-width: 800px;
 }
 
-.skill-item {
+.project-grid {
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  row-gap: 2.5rem;
+  column-gap: 2.5rem;
+}
+
+.box-item {
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
   padding: 1em;
-  background-color: var(--skill-bg);
+  background-color: var(--box-bg);
   border-radius: 8px;
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
   text-align: center;
 }
 
-.skill-icon {
+.box-icon {
   width: 48px;
   height: 48px;
   margin-bottom: 0.5em;
   object-fit: contain;
 }
 
-.skill-name {
+.box-name {
   font-size: 1em;
   font-weight: 600;
-  color: var(--skill-text);
+  color: var(--box-text);
+}
+
+.project-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  margin-bottom: 1.5em;
+  height: auto;
+  min-width: 200px;
+}
+
+.project-item .box-icon {
+  width: 80px;
+  height: 80px;
+  object-fit: contain;
+  margin-bottom: 1rem;
+}
+
+.project-item .box-name {
+  margin: 0;
+  padding: 0;
+  min-height: 1.2em;
+  margin-bottom: 0.5rem;
+}
+
+.project-item .box-description {
+  margin-top: 0.5rem;
+  font-size: 0.9rem;
+  text-align: center;
+  color: var(--text-secondary);
 }
 
 /*---------------------------------

@@ -65,24 +65,24 @@ pub fn skills() -> Html {
 
     html! {
         <>
-        <div class="skills-container">
-            <h2 class="skills-title">{"Experienced with"}</h2>
-            <div class="skills-grid">
+        <div class="box-container">
+            <h2 class="box-title">{"Experienced with"}</h2>
+            <div class="box-grid">
                 { for skills.iter().map(|skill| html! {
-                    <div class="skill-item">
-                        <img src={skill.icon} alt={format!("{} icon", skill.name)} class="skill-icon" />
-                        <span class="skill-name">{ skill.name }</span>
+                    <div class="box-item">
+                        <img src={skill.icon} alt={format!("{} icon", skill.name)} class="box-icon" />
+                        <span class="box-name">{ skill.name }</span>
                     </div>
                 })}
             </div>
         </div>
-        <div class="skills-container">
-            <h2 class="skills-title">{"Currently learning"}</h2>
-            <div class="skills-grid">
+        <div class="box-container">
+            <h2 class="box-title">{"Currently learning"}</h2>
+            <div class="box-grid">
                 { for curr_learning.iter().map(|skill| html! {
-                    <div class="skill-item">
-                        <img src={skill.icon} alt={format!("{} icon", skill.name)} class="skill-icon" />
-                        <span class="skill-name">{ skill.name }</span>
+                    <div class="box-item">
+                        <img src={skill.icon} alt={format!("{} icon", skill.name)} class="box-icon" />
+                        <span class="box-name">{ skill.name }</span>
                     </div>
                 })}
             </div>
